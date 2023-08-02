@@ -127,42 +127,50 @@ const projectsData = {
 // Function to open edit modal for topic
 function openEditModal(topic) {
     const editOption = prompt(`Select parameter to edit for Topic "${topic.name}":
-    1. Status
+    1. Number
     2. Name
-    3. Owners
-    4. Number`);
-    
+    3. Status
+    4. Owners`);
+  
     if (editOption !== null) {
       const optionNumber = parseInt(editOption);
-      if (optionNumber === 1) {
-        const newStatus = prompt(`Edit Topic "${topic.name}"\nEnter new status:`);
-        if (newStatus !== null && newStatus !== topic.status) {
-          updateTopicStatusAndSendEmail(topic, newStatus);
-          updateTable(projectSelect.value);
-        }
-      } else if (optionNumber === 2) {
-        const newName = prompt(`Edit Topic Name "${topic.name}"\nEnter new name:`);
-        if (newName !== null && newName !== topic.name) {
-          topic.name = newName;
-          updateTable(projectSelect.value);
-        }
-      } else if (optionNumber === 3) {
-        const newOwnersInput = prompt(`Edit Topic Owners for "${topic.name}"\nEnter new owners (comma-separated list):`);
-        if (newOwnersInput !== null) {
-
-          const newOwnersArray = newOwnersInput.split(',').map(owner => ({ username: owner.trim(), title: owner, key: 'newUserKey' }));
-          topic.owners = newOwnersArray;
-          updateTable(projectSelect.value);
-        }
-      } else if (optionNumber === 4) {
-        const newNumber = prompt(`Edit Topic Number "${topic.name}"\nEnter new number:`);
-        if (newNumber !== null && newNumber !== topic.number) {
-          topic.number = newNumber;
-          updateTable(projectSelect.value);
-        }
+  
+      switch (optionNumber) {
+        case 1:
+          const newNumber = prompt(`Edit Topic Number "${topic.name}"\nEnter new number:`);
+          if (newNumber !== null && newNumber !== topic.number) {
+            topic.number = newNumber;
+            updateTable(projectSelect.value);
+          }
+          break;
+        case 2:
+          const newName = prompt(`Edit Topic Name "${topic.name}"\nEnter new name:`);
+          if (newName !== null && newName !== topic.name) {
+            topic.name = newName;
+            updateTable(projectSelect.value);
+          }
+          break;
+        case 3:
+          const newStatus = prompt(`Edit Topic "${topic.name}"\nEnter new status:`);
+          if (newStatus !== null && newStatus !== topic.status) {
+            updateTopicStatusAndSendEmail(topic, newStatus);
+            updateTable(projectSelect.value);
+          }
+          break;
+        case 4:
+          const newOwnersInput = prompt(`Edit Topic Owners for "${topic.name}"\nEnter new owners (comma-separated list):`);
+          if (newOwnersInput !== null) {
+            const newOwnersArray = newOwnersInput.split(',').map(owner => ({ username: owner.trim(), title: owner, key: 'newUserKey' }));
+            topic.owners = newOwnersArray;
+            updateTable(projectSelect.value);
+          }
+          break;
+        default:
+          console.log("Invalid option");
       }
     }
   }
+  
   
   
   // Function to update topic status and send email
