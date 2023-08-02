@@ -184,7 +184,12 @@ function openEditModal(topic) {
   // Function to send email to topic owners
   function sendEmailToOwners(topic, oldStatus) {
     topic.owners.forEach(owner => {
-      console.log(`Sending email to ${owner.username} (${owner.title}): Topic "${topic.name}" status changed from "${oldStatus}" to "${topic.status}"`);
+       let mailBody = prompt(`Edit mail Body for ${owner.username}`);
+       if (mailBody != null){
+            console.log(`Sending email to ${owner.username} (${owner.title}): Topic "${topic.name}" status changed from "${oldStatus}" to "${topic.status}"  ${mailBody}`);
+       }else{
+            console.log(`Sending email to ${owner.username} (${owner.title}): Topic "${topic.name}" status changed from "${oldStatus}" to "${topic.status}"`);
+       }
     });
   }
   
