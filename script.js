@@ -1,88 +1,88 @@
 const projectsData = {
     "projects": [
       {
-        "key": "project1",
-        "name": "Project One",
+        "key": "amdocs_project1",
+        "name": "Billing System Upgrade",
         "topics": [
           {
             "number": "1",
-            "name": "Topic A",
+            "name": "Legacy System Analysis",
             "status": "Pending",
             "owners": [
               {
-                "username": "user1",
-                "title": "User One",
-                "key": "user1key"
+                "username": "john_doe",
+                "title": "John Doe",
+                "key": "john_doe_key"
               }
             ]
           },
           {
             "number": "2",
-            "name": "Topic B",
+            "name": "Data Migration Plan",
             "status": "In Progress",
             "owners": [
               {
-                "username": "user2",
-                "title": "User Two",
-                "key": "user2key"
+                "username": "alice_smith",
+                "title": "Alice Smith",
+                "key": "alice_smith_key"
               },
               {
-                "username": "user3",
-                "title": "User Three",
-                "key": "user3key"
+                "username": "bob_jones",
+                "title": "Bob Jones",
+                "key": "bob_jones_key"
               }
             ]
           }
         ]
       },
       {
-        "key": "project2",
-        "name": "Project Two",
+        "key": "amdocs_project2",
+        "name": "Customer Experience Enhancement",
         "topics": [
           {
             "number": "1",
-            "name": "Topic X",
+            "name": "User Interface Redesign",
             "status": "Completed",
             "owners": [
               {
-                "username": "user4",
-                "title": "User Four",
-                "key": "user4key"
+                "username": "emily_rodriguez",
+                "title": "Emily Rodriguez",
+                "key": "emily_rodriguez_key"
               }
             ]
           }
         ]
       },
       {
-        "key": "project3",
-        "name": "Project Three",
+        "key": "amdocs_project3",
+        "name": "Network Performance Optimization",
         "topics": [
           {
             "number": "1",
-            "name": "Topic P",
+            "name": "Data Analysis",
             "status": "Pending",
             "owners": [
               {
-                "username": "user5",
-                "title": "User Five",
-                "key": "user5key"
+                "username": "michael_williams",
+                "title": "Michael Williams",
+                "key": "michael_williams_key"
               }
             ]
           },
           {
             "number": "2",
-            "name": "Topic Q",
+            "name": "Algorithm Implementation",
             "status": "In Progress",
             "owners": [
               {
-                "username": "user6",
-                "title": "User Six",
-                "key": "user6key"
+                "username": "olivia_johnson",
+                "title": "Olivia Johnson",
+                "key": "olivia_johnson_key"
               },
               {
-                "username": "user7",
-                "title": "User Seven",
-                "key": "user7key"
+                "username": "david_smith",
+                "title": "David Smith",
+                "key": "david_smith_key"
               }
             ]
           }
@@ -90,6 +90,7 @@ const projectsData = {
       }
     ]
   };
+  
   
   // Function to populate project selection dropdown
   function populateProjectDropdown() {
